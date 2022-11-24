@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/icon-256x256.png">
+  <link rel="icon" type="image/png" sizes="384x384" href="/assets/icon-384x384.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512x512.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@main/css/iconoir.css">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <main class="container">
+    <div class="menu">
+      <div class="avatar">
+        <img class="thumb" src="https://avatars.githubusercontent.com/u/78271925" width="60" />
+        <span class="name">Bienvenida: @micazayas</span>
+      </div>
+      <nav class="primary">
+        <a href="index.html" class="menu-item active"><span class="iconoir-home-alt"></span><span
+            class="desc">Home</span></a>
+        <a href="multimedia.html" class="menu-item"><span class="iconoir-camera"></span><span class="desc">Multimedia</span></a>
+        <a href="curiosidades.html" class="menu-item"><span class="iconoir-glasses"></span><span
+            class="desc">Curiosidades</span></a>
+      </nav>
+    </div>
+
+    <div class="topbar">
+      <h1>Auroras Boreales <span id="estado"></span>
+      </h1>
+    </div>
+    <div class="dashboard">
+      <div class="search">
+        <form>
+          <label><span></span></label>
+          <input id="input_ciudad" class="bar" type="text" placeholder="Ingrese la ciudad de desea consultar" />
+          <button type="submit" id="botonCiudad" class="btn btn-secondary"> Buscar </button>
+
+        </form>
+
+        <p id="errorCiudad"></p>
+
+      </div>
+
+      <div class="city">📍
+
+        <div id="resultado" class="content"></div>
+
+      </div>
+
+      <div class="currentKp">
+        <div class="card">
+          <div class="content">
+            <div> <canvas id="canvas" width="160" height="160"> </canvas></div>
+            <div> Kp Actual</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="futureKp1">
+        <div class="card">
+          <div class="content">
+
+            <div> <canvas id="canvas2" width="160" height="160"></canvas> </div>
+            <div> Kp en 1 hora </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="kpExplanation">
+        <div class="kpIntro card">
+          <h2> 🤓¿Qué significa Kp?</h2>
+          <div class="kpExplanation__text">
+            <p>El índice KP es un número entre 0 y 9 que muestra cuán fuerte es la
+              actividad auroral en todo el mundo. Mientras más alto sea el kp, más probabilidad tendrás de ver una
+              Aurora.</p>
+
+            <div class="kp">
+              <div class="kp0"> kp 0 <br> Sin actividad</div>
+              <div class="kp1"> kp 1 <br> Auroras débiles</div>
+              <div class="kp2"> kp 2 <br> Auroras débiles</div>
+              <div class="kp3"> kp 3 <br> Auroras moderada</div>
+              <div class="kp4"> kp 4 <br> Auroras visibles</div>
+              <div class="kp5"> kp 5 <br> Tormenta menor</div>
+              <div class="kp6"> kp 6 <br> Tormenta moderada </div>
+              <div class="kp7"> kp 7 <br> Tormenta fuerte</div>
+              <div class="kp8"> kp 8 <br> Tormenta severa</div>
+              <div class="kp9"> kp 9 <br> Tormenta intensa</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="probability">
+        <div class="card">
+          <div class="content">
+            <div> <canvas id="canvas4" width="160" height="160"> </canvas> </div>
+            <div> <span>Probabilidad </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="probabilityExplanation card">
+        <h2>📈 Probalidad de avistaje</h2>
+        <p>La probabilidad depende 5 factores:</p>
+        <ul>
+          <li>Ubicación: Este fenómeno es únicamente observable en países cercanos a los polos (+ info). </li>
+          <li>El Indice "kp" que una escala para medir la actividad geomagnética.</li>
+          <li> Epoca del año: El avistaje el posible de octubre a abril.</li>
+          <li>Clima: El cielo debe estar despejado de nubes.</li>
+          <li> Suerte ya que no es 100% posible predecir la ubicación de una aurora.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="card weather">
+        <h2>Pronóstico del clima</h2>
+        La cobertura de nubes debe ser lo más baja posible; de ​​lo contrario, no podrá ver la aurora incluso si está
+        directamente encima de usted.
+        <div id="resultadoCiudadClima" class="content"></div>
+      </div>
+    </div>
+
+
+  </main>
+  <div class="video">
+    <video src="https://res.cloudinary.com/dtqkhr8o9/video/upload/v1665644022/pexels_uezvrq.mp4" muted playsinline
+      autoplay loop></video>
+  </div>
+
+
+  <script src="js/progressivechart.js"></script>
+  <script src="js/script.js"></script>
+  <script src="./js/mainServiceWorker.js"></script>
+  <script src="./js/registerSW.js"></script>
+
+
+
+</body>
+
+</html>
