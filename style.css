@@ -500,15 +500,21 @@ font-size: 1.rem;
   align-items: center;
 }
 
-.curiosityTitle { grid-area: 1 / 1 / 2 / 5; }
-.curiosity1 { grid-area: 2 / 1 / 4 / 2; }
-.curiosity1Text { grid-area: 4 / 1 / 5 / 2; }
+.curiosityTitle { grid-area: 1 / 1 / 2 / 5;
+                color: white;
+                font-size: 2rem;}
+.curiosity1 { grid-area: 2 / 1 / 4 / 2;}
+.curiosity1Text { grid-area: 4 / 1 / 5 / 2;color: white;
+ }
 .curiosity2 { grid-area: 2 / 2 / 4 / 3; }
-.curiosity2Text{ grid-area: 4 / 2 / 5 / 3; }
+.curiosity2Text{ grid-area: 4 / 2 / 5 / 3;color: white;
+}
 .curiosity3 { grid-area: 2 / 3 / 4 / 4; }
-.curiosity3Text { grid-area: 4 / 3 / 5 / 4; }
+.curiosity3Text { grid-area: 4 / 3 / 5 / 4;color: white;
+ }
 .curiosity4 { grid-area: 2 / 4 / 4 / 5; }
-.curiosity4Text  { grid-area: 4 / 4 / 5 / 5; }
+.curiosity4Text  { grid-area: 4 / 4 / 5 / 5;color: white;
+ }
 
 .curiosities > figure {
   position: relative;
@@ -539,10 +545,27 @@ font-size: 1.rem;
   opacity:80%;
 }
 
-.btn.btn-secondary{
+.btn.btn-secondary {
+    margin-right: unset;
+    order: -1;
+    width: 35%;
+    height: 3rem;
+    border-radius: var(--radius);
+    cursor: default;
+    background: #d71d68;
+    border: none;
+    color: white;
+    font-family: var(--font);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.cityBtn{
   margin-right: unset;
   order: -1;
-  width: 35%; 
+  width: 60%; 
   height: 3rem;
   border-radius: var(--radius);
   cursor: default;
@@ -590,6 +613,7 @@ main .side {
 .bestLocation{
   display: flex;
   flex-direction: column;
+  
 }
   
 .top10 {
@@ -661,6 +685,9 @@ grid-template-columns: repeat(2, 1fr);
 grid-template-rows: 0.5fr repeat(4, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
 }
 
 .curiosityTitle  { grid-area: 1 / 1 / 2 / 3; }
