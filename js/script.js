@@ -167,7 +167,7 @@ function recuperoDatosClima(data) {
   <div >
   <p class="cityName">${name} / ${valorCiudad} </p>
   <div>
-  <img src="./img/iconos/${data.weather[0].icon}.png">
+  <img src="./img/iconos/${data.weather[0].icon}.png alt="ilustración clima">
     </div>
 
     <div>

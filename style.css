@@ -575,7 +575,11 @@ main .side {
   grid-row-gap: 16px;
   margin-top:6rem;
 }
-
+.bestLocation{
+  display: flex;
+  flex-direction: column;
+}
+  
 .top10 {
   grid-area: 3 / 1 / 4 / 2;
 }
@@ -610,7 +614,7 @@ main .side {
     flex-direction: column;
     overflow: overlay;
     height: 100%; 
-  margin-top: 12rem;
+  margin-top: 4rem;
 }
 
 .curiosity1Text, .curiosity2Text, .curiosity3Text, .curiosity4Text  {     text-align: center;
