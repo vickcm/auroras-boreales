@@ -13,7 +13,7 @@ APW que brinda toda la información necesaria para presenciar auroras boreales e
 ## 🔨 Funcionalidades del proyecto
 
 - El usuario puede buscar la probabilidad de ver una aurora boreal en cualquier ciudad del mundo.
-- Se muestran los datos: KP (indice de intensidad de aurora), probabilidad de ver una aurora en una ciudad, pronostico climatico (ya que es fundamental que no haya nubes para un mejor avistaje).
+- Se muestran los datos: KP (índice de intensidad de aurora), probabilidad de ver una aurora en una ciudad, pronóstico climático (ya que es fundamental que no haya nubes para un mejor avistaje).
 
 ## 🎨 Diseño
 
