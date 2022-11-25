@@ -452,7 +452,13 @@ border-radius: 16px;
   text-align: left;
 }
 
-.gif{
+.gifonline{
+  border-radius: 100%;
+  opacity: 0.7;
+  width: 24px;
+  height: 24px;
+}
+.gifoffline{
   border-radius: 100%;
   opacity: 0.7;
   width: 24px;
