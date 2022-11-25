@@ -70,17 +70,27 @@ ultimoAurora = JSON.parse(localStorage.getItem("aurora"));
 
 ultimoNombre = localStorage.getItem("ciudad");
 
+ultimoTop = JSON.parse(localStorage.getItem("topCiudades"));
+
+if (ultimoTop) {
+  button.innerHTML="REFRESCAR"
+
+  
+} 
+
 // pasamos toda la info para armar nuevamente una card con la última búsqueda. Esta vez toda la información de api aurora y api clima en la misma card. 
 
 if (ultimoNombre) {
   nombreCorregido = ultimoNombre.replace(/["]+/g, '')
 }
 
+
+
 // recibe tres parámetros. - clima - aurora - nombre 
 
-localData(ultimoClima, ultimoAurora, nombreCorregido)
+localData(ultimoClima, ultimoAurora,  ultimoTop)
 
-function localData(clima, aurora) {
+function localData(clima, aurora,  topCiudades) {
 
   const {
     name,
@@ -102,7 +112,7 @@ function localData(clima, aurora) {
 <div class="inside-card">
 
     <div>
-        <p class="cityName">${name} / ${nombreCorregido} </p>
+        <p class="cityName">${name}  </p>
 
     </div>
     <div>
@@ -118,9 +128,33 @@ function localData(clima, aurora) {
 `;
 
   camaras(aurora.images.images.rothney.url) // de las 4 cámaras está está traida de la api aurora, era la única que funcionaba. Corresponde a Alberta Canadá. 
-
+  if (ultimoTop) {
+    muestraLocalTop(topCiudades)
+    
+  }
 }
 
+
+
+
+function muestraLocalTop(topCiudades) {
+
+  result.innerHTML = '';
+  html = "";
+
+
+  topCiudades.forEach(element => { // cargo info para mostrar en una variable.
+
+    html += `<p>Ciudad ${element.nombre.description}  ${element.probability.value} % </p>`;
+
+  });
+
+  result.innerHTML = html;
+
+  
+  
+} 
+ 
 
 // función para pasarle el src al elemento html img. 
 
@@ -158,8 +192,13 @@ async function hardPromiseAll() {
 }
 
 
-// En el click del boton
+
+
+  // En el click del boton
 button.addEventListener('click', function() {
+
+  button.innerHTML="REFRESCAR"
+
 
   // const resultado = basicPromiseAll();
   const resultado = hardPromiseAll();
@@ -172,6 +211,7 @@ button.addEventListener('click', function() {
   resultado.then(function(value) {
     // limpio
     result.innerHTML = '';
+    
 
     value.forEach(function(aurora) {
       console.log(aurora)
@@ -197,6 +237,11 @@ button.addEventListener('click', function() {
 
     aurora.sort(((a, b) => b.probability.value - a.probability.value));
     html = "";
+
+    localStorage.setItem("topCiudades", JSON.stringify(aurora));
+
+
+
     aurora.forEach(element => { // cargo info para mostrar en una variable.
 
       html += `<p>Ciudad ${element.nombre.description}  ${element.probability.value} % </p>`;
@@ -210,6 +255,14 @@ button.addEventListener('click', function() {
   })
 
 });
+
+
+  
+
+
+
+
+
 
 
 
